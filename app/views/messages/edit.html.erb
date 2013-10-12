@@ -1,0 +1,8 @@
+<h1>Editing message</h1>
+
+<%= form_for(@message, url: channel_message_path(@channel, @message)) do |f| %>
+    <%= render 'form', f: f %>
+<% end %>
+
+<%= link_to 'Show', channel_message_path(@channel, @message) %> |
+<%= link_to 'Back', channel_messages_path(@channel) %>

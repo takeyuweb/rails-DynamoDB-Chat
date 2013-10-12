@@ -1,0 +1,30 @@
+<h1><%= @channel.name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel</th>
+      <th>Date</th>
+      <th>Body</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+    <tbody>
+    <% @messages.each do |message| %>
+        <tr>
+            <td><%= message.body %></td>
+            <td><%= message.created_at %></td>
+        <td><%= link_to 'Show', channel_message_path(@channel, message) %></td>
+        <td><%= link_to 'Edit', edit_channel_message_path(@channel, message) %></td>
+        <td><%= link_to 'Destroy', channel_message_path(@channel, message), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Message', new_channel_message_path(@channel) %>
