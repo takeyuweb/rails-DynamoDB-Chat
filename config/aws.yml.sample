@@ -1,0 +1,5 @@
+production:
+   access_key_id: YOUR_KEY
+   secret_access_key: YOUR_SECRET_KEY
+   dynamo_db_endpoint: dynamodb.ap-northeast-1.amazonaws.com
+
